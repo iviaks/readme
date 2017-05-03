@@ -28,6 +28,11 @@ docker-compose up -d db
 docker exec -ti <name_of_container> bash
 ```
 
+# Reset PK
+```sql
+ALTER SEQUENCE <tablename>_<id>_seq RESTART WITH 1;
+```
+
 # Django
 ```python
 DATABASES = {
