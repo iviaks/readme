@@ -72,9 +72,9 @@ def ws_disconnect(message):
 ## Front-end
 
 ```javascript
-var protocol = window.location.protocol == "https:" ? "wss:// : "ws://",
+var protocol = window.location.protocol == "https:" ? "wss://" : "ws://",
     host = window.location.host,
-    url = <path to backend's socket>,
+    url = '', // Path to backend socket url
     socket = new WebSocket(protocol + host + url); // close socket => socket.close()
 
 socket.onmessage = function(message){
