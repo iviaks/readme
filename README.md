@@ -1,4 +1,4 @@
-# Links
+# Useful links
 
 [django-project-template](https://github.com/asyncee/django-project-template)
 
