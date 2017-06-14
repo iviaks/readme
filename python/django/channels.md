@@ -1,11 +1,9 @@
-# How to setting Django-channels?
-## Installing
+# Installing
 
 ```bash
 pip install -U channels
 ```
-## Python
-### project/settings.py
+## project/settings.py
 
 ```python
 INSTALLED_APPS = (
@@ -27,24 +25,25 @@ CHANNEL_LAYERS = {
 }
 ```
 
-### project/routing.py
+## project/routing.py
 ```python
 from channels.routing import route
 
 from .consumers import ws_connect, ws_disconnect, ws_message
 
 channel_routing = [
-    route("websocket.connect", ws_connect, path=r'<path to websocket>'),
+    route("websocket.connect", ws_connect, path=r'/chat/(?P<room>\d+)/'),
     route("websocket.receive", ws_message),
     route("websocket.disconnect", ws_disconnect),
 ]
 ```
 
 
-### project/consumers.py
+## project/consumers.py
 ```python
 import json
 
+from channels import Group
 from channels.sessions import channel_session
 
 # Connected to websocket.connect
@@ -69,12 +68,12 @@ def ws_disconnect(message):
         message.reply_channel)
 ```
 
-## Front-end
+# Front-end
 
 ```javascript
 var protocol = window.location.protocol == "https:" ? "wss://" : "ws://",
     host = window.location.host,
-    url = '', // Path to backend socket url
+    url = '/chat/<ROOM_ID>/', // Path to backend socket url
     socket = new WebSocket(protocol + host + url); // close socket => socket.close()
 
 socket.onmessage = function(message){
