@@ -1,17 +1,15 @@
-# Start Django Application
-## Installing Django
+# Installing Django
 ```bash
 pip install django
 ```
 
-## Starting Django application
+# Starting Django application
 ```bash
 django-admin startproject <project-name> [<path>]
 ```
 
-## Changing settings file
+# Changing settings file
 
-### Set static path
 ```python
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
@@ -25,14 +23,8 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
-```
-### Set media path
-```python
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-```
-### Set template path
-```python
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -58,14 +50,9 @@ TEMPLATES = [
     },
 ]
 
-```
-### Set SITE_ID
-```python
 SITE_ID = 1
-```
-### Set database
-#### PostgreSQL
-```python
+
+# PostgreSQL db
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -77,4 +64,18 @@ DATABASES = {
     }
 }
 
+```
+
+# Setup Django E-mail sending
+## Print to console
+```python
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+```
+## Send message through SMTP
+```python
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = <custom-host>
+EMAIL_PORT = <custom-port>
+EMAIL_HOST_USER = <custom-user>
+EMAIL_HOST_PASSWORD = <custom-password>
 ```
