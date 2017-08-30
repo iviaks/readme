@@ -6,9 +6,6 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
 ```json
 {
     "bootstrapped": true,
-    "in_process_packages":
-    [
-    ],
     "installed_packages":
     [
         "A File Icon",
@@ -22,6 +19,7 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
         "Chain of Command",
         "Color Highlighter",
         "ColorPicker",
+        "CSS3",
         "Djaneiro",
         "Django-Rest-Snippets",
         "DocBlockr",
@@ -38,6 +36,7 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
         "isort",
         "JavaScript Snippets",
         "jQuery",
+        "JsPrettier",
         "Minify",
         "Package Control",
         "Random Everything",
@@ -47,11 +46,14 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
         "SassBeautify",
         "SideBarEnhancements",
         "Stylus",
+        "Text Pastry",
         "Theme - Brogrammer"
     ]
 }
 ```
 ### Additional apps
 ```bash
-npm install -g clean-css uglifycss js-beautify html-minifier uglify-js minjson svgo stylus jade
+sudo npm install -g clean-css uglifycss js-beautify html-minifier uglify-js minjson svgo stylus jade prettier
+sudo apt-get install ruby ruby-dev -y
+sudo gem install sass
 ```

@@ -3,7 +3,7 @@
 {
     "atomic_save": false,
     "auto_complete": true,
-    "caret_style": "solid",
+    "caret_style": "phase",
     "ensure_newline_at_eof_on_save": true,
     "file_exclude_patterns":
     [
@@ -37,6 +37,7 @@
         "Batch File",
         "C#",
         "Clojure",
+        "CSS",
         "D",
         "Diff",
         "Erlang",
