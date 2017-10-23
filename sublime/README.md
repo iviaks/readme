@@ -26,7 +26,7 @@
         "subpixel_antialias",
         "no_bold"
     ],
-    "font_size": 13,
+    "font_size": 10,
     "highlight_line": true,
     "highlight_modified_tabs": true,
     "ignored_packages":
@@ -50,8 +50,8 @@
         "Lisp",
         "Lua",
         "Makefile",
-        "Matlab",
         "MATLAB",
+        "Matlab",
         "Objective-C",
         "OCaml",
         "Pascal",

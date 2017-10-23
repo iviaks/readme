@@ -6,6 +6,9 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
 ```json
 {
     "bootstrapped": true,
+    "in_process_packages":
+    [
+    ],
     "installed_packages":
     [
         "A File Icon",
@@ -16,13 +19,12 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
         "Boxy Theme",
         "BracketHighlighter",
         "cdnjs",
-        "Chain of Command",
         "Color Highlighter",
         "ColorPicker",
         "CSS3",
+        "Diffy",
         "Djaneiro",
         "Django-Rest-Snippets",
-        "DocBlockr",
         "Emmet",
         "Emmet Css Snippets",
         "EmmetOneLine",
@@ -33,11 +35,13 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
         "HTML-CSS-JS Prettify",
         "HTML5",
         "Inc-Dec-Value",
+        "Indent Respectful Sort",
         "isort",
         "JavaScript Snippets",
         "jQuery",
         "JsPrettier",
         "Minify",
+        "nginx",
         "Package Control",
         "Random Everything",
         "RegReplace",
@@ -46,6 +50,7 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
         "SassBeautify",
         "SideBarEnhancements",
         "Stylus",
+        "TabsExtra",
         "Text Pastry",
         "Theme - Brogrammer"
     ]
