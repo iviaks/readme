@@ -1,36 +1,22 @@
 # Settings
+
 ```json
 {
     "atomic_save": false,
     "auto_complete": true,
     "caret_style": "phase",
+    "color_scheme": "Packages/Theme - Brogrammer/brogrammer.tmTheme",
     "ensure_newline_at_eof_on_save": true,
-    "file_exclude_patterns":
-    [
-        ".DS_Store",
-        "*.pid",
-        "*.pyc"
-    ],
+    "file_exclude_patterns": [".DS_Store", "*.pid", "*.pyc"],
     "find_selected_text": true,
     "fold_buttons": false,
-    "folder_exclude_patterns":
-    [
-        ".git",
-        "__pycache__",
-        "env",
-        "env3"
-    ],
+    "folder_exclude_patterns": [".git", "__pycache__", "env", "env3"],
     "font_face": "UbuntuMono",
-    "font_options":
-    [
-        "subpixel_antialias",
-        "no_bold"
-    ],
+    "font_options": ["subpixel_antialias", "no_bold"],
     "font_size": 10,
     "highlight_line": true,
     "highlight_modified_tabs": true,
-    "ignored_packages":
-    [
+    "ignored_packages": [
         "ActionScript",
         "AppleScript",
         "ASP",
@@ -50,8 +36,8 @@
         "Lisp",
         "Lua",
         "Makefile",
-        "MATLAB",
         "Matlab",
+        "MATLAB",
         "Objective-C",
         "OCaml",
         "Pascal",
@@ -67,15 +53,13 @@
     ],
     "line_padding_bottom": 0,
     "line_padding_top": 0,
-    "rulers":
-    [
-        79
-    ],
+    "rulers": [79],
     "save_on_focus_lost": true,
     "scroll_past_end": false,
     "show_full_path": true,
     "show_minimap": false,
     "tab_size": 4,
+    "theme": "Boxy Monokai.sublime-theme",
     "translate_tabs_to_spaces": true,
     "trim_trailing_white_space_on_save": true,
     "wide_caret": true,
