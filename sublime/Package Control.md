@@ -31,7 +31,6 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
         "Emmet Css Snippets",
         "EmmetOneLine",
         "FakeImg Image Placeholder Snippet",
-        "Floobits",
         "Gist",
         "Git",
         "GitGutter",
