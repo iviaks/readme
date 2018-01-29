@@ -51,19 +51,6 @@ TEMPLATES = [
 ]
 
 SITE_ID = 1
-
-# PostgreSQL db
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': <db-name>,
-        'USER': <db-user>,
-        'PASSWORD': <db-pass>,
-        'HOST': <db-host>, # Default: localhost
-        'PORT': <db-port> # Default: 5432
-    }
-}
-
 ```
 
 # Setup Django E-mail sending
