@@ -1,11 +1,2 @@
-# Useful links
-
-[django-project-template](https://github.com/asyncee/django-project-template)
-
-[Markdown](https://guides.github.com/features/mastering-markdown/)
-
-# Work with ssh
-```bash
-    ssh <login>@<host> [-p <port>]
-    scp <login>@<host>:<path-to-remote-file> <path-to-local-folder>
-```
+# iViaks Readme
+This repo contains a lot of information about different technologies.
