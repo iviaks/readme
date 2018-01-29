@@ -1,19 +1,30 @@
-# Default pathes
+# Nginx
 
-## Nginx
+Nginx is a web server which can also be used as a reverse proxy, load balancer and HTTP cache. The software was created by Igor Sysoev and first publicly released in 2004. A company of the same name was founded in 2011 to provide support.
+
+Nginx is free and open source software, released under the terms of a BSD-like license. A large fraction of web servers use NGINX, often as a load balancer.
+
+## Default pathes
+
+### Ubuntu
+
 > /etc/nginx/sites-enabled/
 
-## Hosts
-> /etc/hosts
+### CentOS
 
-# Simple static serving
-For showing web-site through nginx, you should to write link in hosts file and configure nginx server
-## Hosts
+> /etc/nginx/conf.d/
+
+## Simple static serving
+
+For serving static files, you should add next line to your hosts:
+
 ```
 127.0.0.1       <site-link>
 ```
-## Nginx
-```
+
+After, you should create nginx config with next content:
+
+```nginx
 server {
     listen 80;
     listen [::]:80;
@@ -21,25 +32,18 @@ server {
     client_max_body_size 4G;
     server_name <site-link>;
 
-    location / {
-       root <path-to-site>;
-    }
-
-    location /static/$1 {
-       root <path-to-site-static>/$1;
-    }
+    root <path-to-site>;
+    index index.html;
 }
 ```
 
-# Serving dynamic content through proxy_pass
+## Serving via ProxyPass
+
 ```
-upstream <site-name> {
+upstream <upstream-name> {
     server <ip-addr> fail_timeout=0;
 }
-map $http_upgrade $connection_upgrade {
-    default upgrade;
-    '' close;
-}
+
 server {
     listen 80;
     listen [::]:80;
@@ -48,37 +52,30 @@ server {
     server_name <site-link>;
 
     location / {
-        proxy_pass          http://<site-name>;
+        proxy_pass          http://<upstream-name>;
         proxy_http_version  1.1;
-        proxy_set_header    Upgrade $http_upgrade;
-        proxy_set_header    Connection  $connection_upgrade;
     }
 }
 ```
-## Enable uwsgi
-```bash
-uwsgi --socket <ip-addr>:<port> --wsgi-file <path-to-wsgi-file> --master --processes 4 --threads 2 --virtualenv <path-to-virtualenv>
-```
-# Enable HTTPS
+
+## Enable HTTPS (with HTTP/2)
+
 ```
 server {
     ...
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
 
-    add_header X-XSS-Protection "1; mode=block";
-
-    include snippets/ssl-<site-link>.conf; # https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04#create-a-configuration-snippet-with-strong-encryption-settings#create-a-configuration-snippet-pointing-to-the-ssl-key-and-certificate
-    include snippets/ssl-params.conf; # https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04#create-a-configuration-snippet-with-strong-encryption-settings
-
-    if ($scheme != "https") {
-        return 301 https://$server_name$request_uri;
-    }
+    ssl_certificate     certificate.crt;
+    ssl_certificate_key certificate.key;
+    ssl_protocols       TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers         HIGH:!aNULL:!MD5;
     ...
 }
 ```
 
-# Enable Gzip Compression
+## Enable Gzip Compression
+
 ```
 server {
     ...
@@ -95,7 +92,8 @@ server {
 }
 ```
 
-# Creating aliases
+## Creating aliases
+
 ```
 server {
     ...
@@ -106,7 +104,8 @@ server {
 }
 ```
 
-# Configure error pages
+## Configure error pages
+
 ```
 server {
     ...
@@ -121,7 +120,8 @@ server {
 }
 ```
 
-# Enable WebSockets
+## Enable WebSockets
+
 ```
 server {
     ...
