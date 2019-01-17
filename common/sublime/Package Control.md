@@ -58,7 +58,19 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
 ### Additional apps
 
 ```bash
-sudo npm install -g clean-css uglifycss js-beautify html-minifier uglify-js minjson svgo stylus prettier
+sudo npm install -g prettier
 sudo apt-get install ruby ruby-dev -y
 sudo gem install sass
+```
+
+### Prettier config
+```json
+{
+    "auto_format_on_save": true,
+    "prettier_options": {
+        "printWidth": 80,
+        "singleQuote": true,
+        "trailingComma": "es5"
+    }
+}
 ```
