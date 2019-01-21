@@ -32,7 +32,6 @@
     "ignored_packages":
     [
         "ActionScript",
-        "Anaconda",
         "AppleScript",
         "ASP",
         "Batch File",
