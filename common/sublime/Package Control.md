@@ -10,47 +10,36 @@ import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d
 {
 	"bootstrapped": true,
 	"in_process_packages":
-	[],
+	[
+	],
 	"installed_packages":
 	[
 		"A File Icon",
-		"Anaconda",
 		"AutoFileName",
 		"Babel",
 		"Babel Snippets",
 		"BracketHighlighter",
 		"cdnjs",
 		"Color Highlighter",
-		"ColorPicker",
 		"CSS3",
-		"Diffy",
 		"Djaneiro",
 		"Django-Rest-Snippets",
 		"Emmet",
 		"ESLint",
-		"Gist",
-		"Git",
 		"GitGutter",
-		"HTML-CSS-JS Prettify",
 		"HTML5",
 		"Inc-Dec-Value",
 		"isort",
 		"JavaScript Snippets",
 		"jQuery",
 		"JsPrettier",
-		"Material Theme",
-		"Minify",
-		"nginx",
 		"Package Control",
 		"Random Everything",
-		"RegReplace",
 		"Sass",
 		"SASS Build",
 		"SideBarEnhancements",
-		"Stylus",
 		"TabsExtra",
-		"Text Pastry",
-		"TypeScript"
+		"Text Pastry"
 	]
 }
 ```
